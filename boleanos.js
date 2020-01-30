@@ -8,7 +8,8 @@
 const alunosDaTurmaA = [
     {
         nome: 'Lucas',
-        nota: 1.8
+        nota: 1.8,
+        reprovado: true
     },
     {
         nome: 'Jorge',
@@ -77,3 +78,8 @@ function enviaMensagem(media, turma) {
 // Parâmetros da função
 enviaMensagem(media1, 'TurmaA')
 enviaMensagem(media2, 'TurmaB')
+
+/* Marcar aluno como reporvado se anota
+   for menor que 5 e , também marcar como 
+   reprovado*/
+   console.log(typeof alunosDaTurmaA[0].reprovado)
