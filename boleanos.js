@@ -9,7 +9,7 @@ const alunosDaTurmaA = [
     {
         nome: 'Lucas',
         nota: 1.8,
-        reprovado: true
+
     },
     {
         nome: 'Jorge',
@@ -79,7 +79,37 @@ function enviaMensagem(media, turma) {
 enviaMensagem(media1, 'TurmaA')
 enviaMensagem(media2, 'TurmaB')
 
-/* Marcar aluno como reporvado se anota
+/* Marcar aluno como reprovado se anota
    for menor que 5 e , também marcar como 
    reprovado*/
-   console.log(typeof alunosDaTurmaA[0].reprovado)
+
+// Nessa função apenas marcamos o aluno que está reprovado, 
+// aplicando uma condição p/ a mesma
+function marcarComoReprovado(aluno) {
+    aluno.reprovado = false;
+    if(aluno.nota < 5){
+        aluno.reprovado = true;
+    }
+    
+}
+
+
+// Aki mandamos através de uma função a mensagem
+function enviarMensagemReprovado(aluno) {
+    if (aluno.reprovado) {
+        console.log(`o ALuno ${aluno.nome} está reprovado`)
+    }
+}
+
+function alunoReprovado(alunos) {
+    // Outra forma de fazer a repetição
+    for (let aluno of alunos) {
+        marcarComoReprovado(aluno)
+        enviarMensagemReprovado(aluno)
+    }
+    }
+
+    alunoReprovado(alunosDaTurmaA)
+    alunoReprovado(alunosDaTurmaB)
+    
+    
