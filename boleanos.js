@@ -79,6 +79,7 @@ function enviaMensagem(media, turma) {
 enviaMensagem(media1, 'TurmaA')
 enviaMensagem(media2, 'TurmaB')
 
+
 /* Marcar aluno como reprovado se anota
    for menor que 5 e , também marcar como 
    reprovado*/
