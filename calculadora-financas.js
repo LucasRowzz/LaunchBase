@@ -26,7 +26,7 @@ function calculaSaldo(usuarios){
     let somaReceitas = 0
     // Percorri o array das receitas, dentro do objeto usuarios
     for(let i = 0; i < usuarios.receitas.length; i++){
-        // Peguei a variável somaRceitas e fiz uma operação aritmética
+        // Peguei a variável somaReceitas e fiz uma operação aritmética
         // somaReceitas + usuarios.(as receitas que peguei na variavel i, acima)
         somaReceitas = somaReceitas + usuarios.receitas[i]
     }
