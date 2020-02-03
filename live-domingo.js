@@ -62,5 +62,25 @@ for (let i = 0; i < array.length; i++) {
 const values = [2, 4, 6, { a: "aloooo" }, 7, 8, 5, 4, 4]
 
 for (value of values) {
-    console.log(value)
+    // console.log(value)
+}
+
+// Mais exemplos de como usar funções
+const users = [
+    {name: "Carlos", techs: ['HTML', 'CSS']},
+    {name: "Fernando", techs: ['Node', 'Js']}
+]
+
+function checkUserHasCss(user){
+
+    for(tech of user.techs){
+        if(tech == 'CSS'){
+            return true
+        }
+    }
+    return false
+}
+
+for(user of users){
+    console.log(`${user.name} has css? ${checkUserHasCss(user)}`)
 }
