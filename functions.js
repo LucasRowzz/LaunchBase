@@ -1,55 +1,63 @@
-/* Criar um programa que calcula a média
-   das turmas de alunos e envia mensagem
-   do calculo da média 
-*/
-
 const alunosDaTurmaA = [
     {
-        nome: 'Lucas',
-        nota: 9.8
+        name: 'Lucas',
+        grade: 10,
     },
     {
-        nome: 'Jorge',
-        nota: 10
+        name: 'Diego',
+        grade: 7
     },
     {
-        nome: 'Leticia',
-        nota: 2
+        name: 'Fulano',
+        grade: 5
+    },
+    {
+        name: 'garrafa',
+        grade: 0
     }
 ]
 
 const alunosDaTurmaB = [
     {
-        nome: 'Amanda',
-        nota: 5
+        name: 'Cleiton',
+        grade: 5,
     },
     {
-        nome: 'Fernando',
-        nota: 5
+        name: 'Robson',
+        grade: 10
     },
     {
-        nome: 'Robson',
-        nota: 2
+        name: 'Siclano',
+        grade: 5
+    },
+    {
+        name: 'Kprge',
+        grade: 7
     }
 ]
 
-// Função que calcula a média
+function calculateAverage(alunos){
+    let soma = 0
 
-function calculaMedia(alunos) {
-    return (alunos[0].nota + alunos[1].nota + alunos[2].nota) / 3
+    for(let i = 0; i < alunos.length; i++){
+        soma = soma + alunos[i].grade
+    }
+
+    const media = soma / alunos.length
+    // Para jogar para fora a media
+    return media
 }
 
-const media1 = calculaMedia(alunosDaTurmaA)
-const media2 = calculaMedia(alunosDaTurmaB)
+const media1 = calculateAverage(alunosDaTurmaA)
+const media2 = calculateAverage(alunosDaTurmaB)
 
-function enviaMensagem(media, turma){
-    // Se a média for maior que 5, parabenizar a turma
-    if (media > 5) {
-        console.log(`A média da turma ${turma} ${media}. Parabéns`)
+function sendFlunkedMessage(media, turma){
+    if(media > 5){
+        console.log(`A média da ${turma} é : ${media}. Parabéns`)
     } else{
-        console.log(`A média da turma ${turma} é menor que 5`)
+        console.log(`A média da ${turma} é menor que 5`)
     }
 }
-            // Parâmetros da função
-enviaMensagem(media1, 'TurmaA')
-enviaMensagem(media2, 'TurmaB')
+
+sendFlunkedMessage(media1, 'TurmaA')
+sendFlunkedMessage(media2, 'TurmaB')

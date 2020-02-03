@@ -2,6 +2,7 @@
 const usuarios = [
     {nome: 'Lucas', techs: ['HTML', 'CSS']},
     {nome: 'Fernando', techs: ['CSS', '54']},
+    {nome: 'Jorge', techs: ['CSS']},
     {nome: 'Jessica', techs: ['JS', 'BOOT']}
 ]
 
@@ -10,19 +11,20 @@ const usuarios = [
    true/false*/
 // Percorrendo os usuários
 
-function checaCss(usuario) {
-    // Percorrendo os usuarios
+function checkCss(usuario){
+
     for(let i = 0; i < usuario.length; i++){
-        // Percorrendo as techs
         for(let j = 0; j < usuario[i].techs.length; j++){
-            // Criando a condição
-            if(usuario[i].techs[j] === "CSS"){
-                console.log(`O usuário ${usuario[i].nome} Trabalha com CSS`)
+            if(usuario[i].techs[j] == 'CSS'){
+                console.log(`O Usuario ${usuario[i].nome} trabalha com CSS `)
+            } else {
+                console.log(`nao trabalha`)
+            }
+                
+            }
+                
             }
         }
+    
 
-    }
-}
- 
-// Chamando a função
-checaCss(usuarios)
+checkCss(usuarios)

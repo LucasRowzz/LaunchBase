@@ -1,5 +1,5 @@
 // Criando vetores, serve para colocar diversos objetos ou valores agrupados
-// Arrays ou vetores
+// Coleção de objetos. Arrays ou vetores
 const alunos = [
     {
         nome:"Lucas",
