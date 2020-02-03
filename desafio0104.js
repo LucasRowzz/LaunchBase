@@ -52,16 +52,33 @@ function getAverageTransactionValue(){
     }  
     // e fiz a média aki
     const average = sum / user.transactions.length
-    return console.log(`A média das Transações do usuario : ${user.name} foi de ${average}`)
-
-    
+    return console.log(`A média das Transações do usuario : ${user.name} foi de ${average}`)  
 }
 
+function getTransactionsCount() {
+    // Criando um contador, para ver quantas vezes algo se repete dentro do array
+    let countCred = 0
+    let countDebt = 0
+
+    for (let i = 0; i < user.transactions.length; i++) {
+        if (user.transactions[i].type === "credit") {
+            countCred++
+           
+        } else {
+            countDebt++
+        }
+    }
+    const credit = countCred
+    const debit = countDebt
+
+    return console.log(`A quantidade de operações de Credito foram ${credit} ` + `e de débito foram ${debit}`)
+}
 // Adicionando as transações ao array
 createTransaction({ type: 'credit', value: 50 })
 createTransaction({ type: 'credit', value: 1000 })
 createTransaction({ type: 'debit', value: 150 })
 createTransaction({ type: 'debit', value: 30 })
+createTransaction({ type: 'credit', value: 30 })
 
 // Retornando a média das transações independente do seu tipo
 getAverageTransactionValue(user.transactions)
@@ -69,3 +86,8 @@ getAverageTransactionValue(user.transactions)
 // Puxando as maiores transações de cada tipo
 getHigherTransactionByType('credit')
 getHigherTransactionByType('debit')
+
+// Fazendo a conta de quantas transações foram efetuadas de cada tipo
+getTransactionsCount()
+
+console.log(`O balanço final foi de $${user.balance}`)
